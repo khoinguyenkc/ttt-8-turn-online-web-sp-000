@@ -41,8 +41,22 @@ def valid_move? (board, index)
 end
 #------------------------
 def turn(board)
+
   puts "Please enter 1-9:"
+
+  #get user input
   input = gets.strip
+
+  #convert to array index
   index = input_to_index(input)
-  puts index
+
+  #check if input valid
+  if valid_move?(board,index)
+    move(board,index,character = "X" )
+  else
+    #tell them invalid input and need to re-enter
+    puts "Invalid input"
+    turn(board)
+  end
+
 end
