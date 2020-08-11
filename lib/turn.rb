@@ -54,7 +54,6 @@ def turn(board)
   if valid_move?(board,index)
     move(board,index,character = "X" )
     display_board(board)
-    turn(board)
   else
     #tell them invalid input and need to re-enter
     puts "Invalid input"
